@@ -1,0 +1,42 @@
+﻿@using ProfileManagement.Models.ViewModels
+@model IEnumerable<ProfileViewModel>
+@{
+    ViewData["Title"] = "Profiles";
+}
+
+<div>
+    <h5>List of Profiles</h5>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var profile in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => profile.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => profile.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => profile.PhoneNumber)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
