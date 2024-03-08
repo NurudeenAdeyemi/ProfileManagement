@@ -4,6 +4,9 @@
     ViewData["Title"] = "Profiles";
 }
 
+<p>
+    <a asp-action="AddProfile">Add New Profile</a>
+</p>
 <div>
     <h5>List of Profiles</h5>
 
@@ -20,6 +23,12 @@
                 <th>
                     @Html.DisplayNameFor(model => model.PhoneNumber)
                 </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateofBirth)
+                </th>
+                <th>
+                    View
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +43,12 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => profile.PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => profile.DateofBirth)
+                    </td>
+                    <td>
+                        <a asp-action="ProfileInfo" asp-route-id="@profile.Id">Details</a>
                     </td>
                 </tr>
             }
